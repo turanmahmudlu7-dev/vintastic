@@ -1,0 +1,6 @@
+{
+  "name": "Vintastic",
+  "description": "A premium e-commerce store with an anime/retro game universe aesthetic.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

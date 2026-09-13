@@ -1,0 +1,90 @@
+@import "tailwindcss";
+
+@theme {
+  --font-pixel: 'Pixelify Sans', sans-serif;
+  --font-body: 'Space Grotesk', sans-serif;
+  --color-primary-base: #0f111a;
+  --color-primary-dark: #090a10;
+  --color-primary-light: #1a1d2d;
+  --color-accent-blue: #00f0ff;
+  --color-accent-purple: #b026ff;
+  --color-accent-red: #ff3366;
+  --color-accent-yellow: #ffde00;
+  --color-accent-green: #00ff66;
+}
+
+@layer base {
+  body {
+    @apply bg-[var(--color-primary-base)] text-white font-body;
+    background-image: 
+      radial-gradient(circle at 15% 50%, rgba(176, 38, 255, 0.05), transparent 25%),
+      radial-gradient(circle at 85% 30%, rgba(0, 240, 255, 0.05), transparent 25%);
+    background-attachment: fixed;
+  }
+}
+
+@layer utilities {
+  .pixel-border {
+    box-shadow: 
+      -2px 0 0 0 currentColor, 
+      2px 0 0 0 currentColor, 
+      0 -2px 0 0 currentColor, 
+      0 2px 0 0 currentColor;
+  }
+
+  .pixel-border-sm {
+    box-shadow: 
+      -1px 0 0 0 currentColor, 
+      1px 0 0 0 currentColor, 
+      0 -1px 0 0 currentColor, 
+      0 1px 0 0 currentColor;
+  }
+  
+  .scanlines {
+    position: relative;
+  }
+  
+  .scanlines::before {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+    z-index: 50;
+    background-size: 100% 2px, 3px 100%;
+    pointer-events: none;
+  }
+  
+  .text-glow-blue {
+    text-shadow: 0 0 8px rgba(0, 240, 255, 0.6);
+  }
+  
+  .text-glow-purple {
+    text-shadow: 0 0 8px rgba(176, 38, 255, 0.6);
+  }
+  
+  .text-glow-yellow {
+    text-shadow: 0 0 8px rgba(255, 222, 0, 0.6);
+  }
+  
+  .bg-glass {
+    @apply bg-black/40 backdrop-blur-md border border-white/10;
+  }
+
+  .vintastic-container {
+    width: 100%;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .vintastic-container img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    display: block;
+  }
+}
